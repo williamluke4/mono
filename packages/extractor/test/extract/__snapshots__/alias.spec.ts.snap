@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`exported type alias of array is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "export type A = 1[];",
+        "nodeText": "export type A = 1[];",
+        "typeText": "A",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "innerType": Object {
+          "base": "number",
+          "kind": "literal",
+          "name": "1",
+        },
+        "kind": "array",
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of array via typeof is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "
+export type A = typeof a;",
+        "nodeText": "export type A = typeof a;",
+        "typeText": "number[]",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "innerType": Object {
+          "kind": "primitive",
+          "type": "number",
+        },
+        "kind": "array",
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of boolean is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "export type A = boolean;",
+        "nodeText": "export type A = boolean;",
+        "typeText": "boolean",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "kind": "primitive",
+        "type": "boolean",
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of boolean via typeof is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "
+export type A = typeof a;",
+        "nodeText": "export type A = typeof a;",
+        "typeText": "boolean",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "kind": "primitive",
+        "type": "boolean",
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of function is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "export type A = () => {};",
+        "nodeText": "export type A = () => {};",
+        "typeText": "A",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "hasProps": false,
+        "isOverloaded": false,
+        "kind": "callable",
+        "props": Array [],
+        "raw": Object {
+          "nodeFullText": "export type A = () => {};",
+          "nodeText": "export type A = () => {};",
+          "typeText": "A",
+        },
+        "sigs": Array [
+          Object {
+            "kind": "sig",
+            "params": Array [],
+            "return": Object {
+              "kind": "object",
+              "props": Array [],
+              "raw": Object {
+                "nodeFullText": "",
+                "nodeText": "",
+                "typeText": "{}",
+              },
+            },
+          },
+        ],
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of function via typeof is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "
+export type A = typeof a;",
+        "nodeText": "export type A = typeof a;",
+        "typeText": "() => void",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "hasProps": false,
+        "isOverloaded": false,
+        "kind": "callable",
+        "props": Array [],
+        "raw": Object {
+          "nodeFullText": "() => {}",
+          "nodeText": "() => {}",
+          "typeText": "() => void",
+        },
+        "sigs": Array [
+          Object {
+            "kind": "sig",
+            "params": Array [],
+            "return": Object {
+              "kind": "primitive",
+              "type": "void",
+            },
+          },
+        ],
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of object is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "export type A = { b: 1 };",
+        "nodeText": "export type A = { b: 1 };",
+        "typeText": "A",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "kind": "object",
+        "props": Array [
+          Object {
+            "kind": "prop",
+            "name": "b",
+            "type": Object {
+              "base": "number",
+              "kind": "literal",
+              "name": "1",
+            },
+          },
+        ],
+        "raw": Object {
+          "nodeFullText": "export type A = { b: 1 };",
+          "nodeText": "export type A = { b: 1 };",
+          "typeText": "A",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`exported type alias of object via typeof is added to type index 1`] = `
+Object {
+  "modules": Array [
+    Object {
+      "isMain": true,
+      "kind": "module",
+      "location": Object {
+        "absoluteFilePath": "/src/a.ts",
+      },
+      "mainExport": null,
+      "name": "a",
+      "namedExports": Array [
+        Object {
+          "isTerm": false,
+          "isType": true,
+          "kind": "export",
+          "name": "A",
+          "type": Object {
+            "kind": "typeIndexRef",
+            "link": "(a).A",
+          },
+        },
+      ],
+      "path": "/",
+      "tsdoc": null,
+    },
+  ],
+  "typeIndex": Object {
+    "(a).A": Object {
+      "kind": "alias",
+      "name": "A",
+      "raw": Object {
+        "nodeFullText": "
+export type A = typeof a;",
+        "nodeText": "export type A = typeof a;",
+        "typeText": "{ b: number; }",
+      },
+      "tsdoc": null,
+      "type": Object {
+        "kind": "object",
+        "props": Array [
+          Object {
+            "kind": "prop",
+            "name": "b",
+            "type": Object {
+              "kind": "primitive",
+              "type": "number",
+            },
+          },
+        ],
+        "raw": Object {
+          "nodeFullText": "{ b: 1 }",
+          "nodeText": "{ b: 1 }",
+          "typeText": "{ b: number; }",
+        },
+      },
+    },
+  },
+}
+`;
