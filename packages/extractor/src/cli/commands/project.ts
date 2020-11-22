@@ -14,7 +14,9 @@ export class Project extends Command {
       description: 'Entrypoint(s) into the package',
     },
   ]
-  static flags = {
+
+
+  static flags: flags.Input<any> = {  
     markdown: flags.boolean({
       default: true,
       char: 'm',
