@@ -3,6 +3,7 @@ import fs from "fs-extra";
 import path from "path";
 import request from "request";
 import { GithubSearchResponse, Item, ReposGetContentResponseData } from "./types";
+import * as packageJson from "package-json-types";
 
 interface GithubDownloadParams {
   user: string;
@@ -41,26 +42,23 @@ async function req<T>(url: string): Promise<T>{
 export async function findPackageJSON(module: string, repoUrl: string){
   const [_, details] = repoUrl.split('github.com/')
   const [user, repo] = details.split('/')
+  
+  // TODO Find a way to get the default branch or use tags
+  const ref = 'master'
   const query = encodeURIComponent(`"name": ${module}`)
 
   const url = `https://api.github.com/search/code?q=${query}+repo:${user}/${repo}+filename:package.json`
   const data = await req<GithubSearchResponse>(url)
   const found = await data.items.reduce( async (acc, item) => {
-    const url = rawBuilder(user, repo, 'master') + item.path
+    const url = rawBuilder(user, repo, ref) + item.path
     const pkg = await req(url)
     if(pkg["name"] === module){
-      return item
+      return {pkg, item}
     }
     if(acc) return acc
     return null
-  }, null as Promise<Item | undefined> )
-
-  if(found){
-    console.log(found.path);
-  }  
-  // wait.forEach(item => {
-  //   console.log(item.path);
-  // })
+  }, null as Promise<{pkg: packageJson.Body, item: Item} | undefined> )
+  return {found, user, repo, ref} 
 }
 export function fetchContent(
   params: Pick<GithubDownloadParams, "user" | "repo" | "path" | "ref">

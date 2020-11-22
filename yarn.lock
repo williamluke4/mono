@@ -14077,26 +14077,6 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-tydoc@latest:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/tydoc/-/tydoc-0.2.1.tgz#09c36ae1f744783424844d3fa54921ef822bed47"
-  integrity sha512-VEZplam8X4v3BfSNGRFyzRUb6BHW9QN3PCmNnngpD+UH/9mPb2wxjLbFAfxcTs0ZzOno13iu4Pc1HM4bB6XfHQ==
-  dependencies:
-    "@microsoft/tsdoc" "^0.12.21"
-    "@oclif/command" "^1.8.0"
-    "@oclif/config" "^1.17.0"
-    "@oclif/plugin-help" "^3.2.0"
-    "@types/debug" "^4.1.5"
-    "@types/lodash" "^4.14.149"
-    debug "^4.1.1"
-    doctoc "^1.4.0"
-    fs-jetpack "^2.2.3"
-    globby "^11.0.0"
-    lodash "^4.17.15"
-    prettier "^2.1.2"
-    ts-morph "^7.0.0"
-    typescript "^3.7.4"
-
 type-check@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz"
