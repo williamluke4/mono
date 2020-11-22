@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "install": "pnpm install --filter=tydoc && pnpm install --filter=tydoc-web ",
     "dev": "pnpm run dev --parallel -r --filter=!mono",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +14,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@sindresorhus/tsconfig": "^0.8.0"
+  }
 }
