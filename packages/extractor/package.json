@@ -14,7 +14,7 @@
     "oclif.manifest.json"
   ],
   "scripts": {
-    "postinstall": "pnpm build",
+    "postinstall": "yarn build",
     "build:docs:toc": "doctoc README.md",
     "build:docs:api": "ts-node scripts/build-api-docs",
     "build:docs": "yarn -s build:docs:api && yarn -s build:docs:toc",

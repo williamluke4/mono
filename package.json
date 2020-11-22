@@ -1,13 +1,13 @@
 {
   "name": "mono",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "install": "pnpm install --filter=tydoc && pnpm install --filter=tydoc-web ",
-    "dev": "pnpm run dev --parallel -r --filter=!mono",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn workspaces run build",
+    "dev": "yarn workspaces run dev"
   },
+  "workspaces": ["packages/*"],
   "devDependencies": {
     "ts-node": "9.0.0",
     "typescript": "4.1.2"

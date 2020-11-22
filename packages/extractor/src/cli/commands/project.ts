@@ -16,7 +16,7 @@ export class Project extends Command {
   ]
 
 
-  static flags: flags.Input<any> = {  
+  static flags = {  
     markdown: flags.boolean({
       default: true,
       char: 'm',
