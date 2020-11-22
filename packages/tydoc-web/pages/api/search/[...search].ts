@@ -3,28 +3,25 @@ import downloadNpmPackage from 'download-npm-package'
 import * as tydoc from 'tydoc'
 import { NextApiRequest, NextApiResponse } from 'next'
 import tempy from 'tempy'
+import {fetchContent, findPackageJSON} from '../../../lib/github'
 
-async function download(module: string) {
-  return new Promise((resolve, reject) =>
-    downloadNpmPackage({
-      arg: module, // for example, npm@2 or @mic/version@latest etc
-      dir: '/tmp', // package will be downlodaded to ${dir}/packageName
-    })
-      .then(() => resolve(`/tmp/${module}`))
-      .catch((err) => reject(err)),
-  )
-}
-import * as tsm from 'ts-morph'
 import * as path from 'path'
-import * as fs from 'fs-extra'
+import { getPackageInfo } from 'lib/npm/getInfo'
 
-const pkg = path.resolve(__dirname, './package/ink')
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let dir;
+  const module = req.url.replace('/api/search/', '')
+  const packageInfo = await getPackageInfo(module)
+  const repo = packageInfo?.collected?.metadata?.links?.repository
+  const response = findPackageJSON('@prisma/client', repo)
+  // Search and Download 
+  // download({package: '@prisma/client', repository: })
+  console.log(packageInfo);
   try {
-    dir = await download('@prisma/client')
+    // Traverse Repo to find package.json with matching packageName then download
+    // dir = await download('@prisma/client','https://github.com/prisma/prisma')
   } catch (err) {
     console.error(err)
     res.send(err.message)
@@ -43,5 +40,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //   readSettingsFromJSON: true,
   // })
   res.statusCode = 200
-  res.json({ name: 'John Doe' })
+  res.json(repo)
 }

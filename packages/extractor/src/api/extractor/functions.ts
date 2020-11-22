@@ -36,11 +36,11 @@ function getFunctionGraph(packagePath) {
       referenced.map((ref) => {
         if (TypeGuards.isImportDeclaration(ref)) {
           const importSource = ref.getModuleSpecifierSourceFile()
-          const importSourcePath = path.relative(
+          const importSourcePath = importSource && path.relative(
             packagePath,
             importSource.getFilePath(),
           )
-          if (
+          if ( importSource &&
             !importSource.getFilePath().includes('node_modules') &&
             !importSource.getFilePath().includes('__tests__')
           ) {
