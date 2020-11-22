@@ -1,5 +1,8 @@
 "# mono"
 
+Feel free to commit directly to this if you want to change something
+
 ```
-pnpm run dev --parallel -r
+yarn 
+yarn dev
 ```
