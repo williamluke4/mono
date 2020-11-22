@@ -12,13 +12,14 @@
   },
   "dependencies": {
     "@microsoft/tsdoc": "^0.12.21",
+    "download-npm-package": "^3.1.12",
     "next": "10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "tempy": "^1.0.0",
     "ts-morph": "^8.1.2"
   },
   "devDependencies": {
-    "ink": "^3.0.6",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@storybook/addon-actions": "^6.0.28",
@@ -32,6 +33,7 @@
     "autoprefixer": "^9",
     "babel-loader": "^8.1.0",
     "fs-extra": "^9.0.1",
+    "ink": "^3.0.6",
     "maticzav-tydoc": "^0.0.2",
     "prettier": "^2.1.2",
     "react-is": "^17.0.1",
