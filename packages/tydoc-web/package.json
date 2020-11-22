@@ -37,7 +37,7 @@
     "react-is": "^17.0.1",
     "tailwindcss": "^1.9.6",
     "ts-node": "^9.0.0",
-    "tydoc": "latest",
+    "tydoc": "0.0.0-dripip",
     "typescript": "^4.0.5"
   }
 }
