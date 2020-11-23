@@ -51,8 +51,8 @@ export async function findPackageJSON(module: string, repoUrl: string){
   const data = await req<GithubSearchResponse>(url)
   const found = await data.items.reduce( async (acc, item) => {
     const url = rawBuilder(user, repo, ref) + item.path
-    const pkg = await req(url)
-    if(pkg["name"] === module){
+    const pkg = await req<packageJson.Body>(url)
+    if(pkg?.name === module){
       return {pkg, item}
     }
     if(acc) return acc
@@ -126,7 +126,7 @@ export class GithubDownloader extends EventEmitter {
   processItems(items: ReposGetContentResponseData[]) {
     this.pending += items.length;
     this.gonnaProcess -= 1;
-    items.forEach((item) => this.handleItem(item));
+    items?.forEach((item) => this.handleItem(item));
     this.checkDone();
   }
   urlBuilder(customPath?: string) {
@@ -145,6 +145,15 @@ export class GithubDownloader extends EventEmitter {
   download() {
     this.gonnaProcess += 1;
     this.requestJSON();
+    return new Promise((resolve, reject) => {
+      this.on('end', () => {
+        resolve();
+      })
+      this.on('error', (err) => {
+        console.error(err);
+        reject(err)
+      })
+    })
   }
   handleItem(item: ReposGetContentResponseData) {
     // console.log({outputDir: this.outputDir});
